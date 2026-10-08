@@ -7,9 +7,10 @@ Each photo was cropped, resized and compressed to WebP for this template. A gree
 | File | Used for | Photographer | Source page |
 |---|---|---|---|
 | `img/hero.webp` | Hero background | Pankaj Shah | https://unsplash.com/photos/green-grass-field-with-trees-1ff_i7jO-4g |
-| `img/proj-arcata.webp` | Hero project card: Backyard refresh, Arcata | Matthew | https://unsplash.com/photos/pink-flowers-on-green-grass-field-HBjsSlRHXnY |
-| `img/proj-eureka.webp` | Hero project card: New drip + native beds, Eureka | Aniston Grace | https://unsplash.com/photos/yellow-and-red-flower-garden-L3hyEbDk194 |
-| `img/proj-patio.webp` | Hero project card: Patio + plantings, McKinleyville | FRAEM GmbH | https://unsplash.com/photos/a-wooden-deck-surrounded-by-rocks-and-trees-XetPrcHCzZg |
+| `img/show-arcata.webp` | Hero project showcase: Backyard refresh, Arcata | Matthew | https://unsplash.com/photos/pink-flowers-on-green-grass-field-HBjsSlRHXnY |
+| `img/show-eureka.webp` | Hero project showcase: New drip + native beds, Eureka | Aniston Grace | https://unsplash.com/photos/yellow-and-red-flower-garden-L3hyEbDk194 |
+| `img/show-trinidad.webp` | Hero project showcase: Rhododendron walk, Trinidad | Annie Spratt | https://unsplash.com/photos/gray-concrete-pathway-between-green-trees-during-daytime-0uAY4be1qu8 |
+| `img/show-patio.webp` | Hero project showcase: Deck + stone wall, McKinleyville | FRAEM GmbH | https://unsplash.com/photos/a-wooden-deck-surrounded-by-rocks-and-trees-XetPrcHCzZg |
 | `img/svc-lawn.webp` | Service card: Lawn care | Thomas Kinto | https://unsplash.com/photos/a-green-lawn-with-a-red-fire-hydrant-in-the-middle-of-it-7gPz5ICKG2k |
 | `img/svc-cleanup.webp` | Service card: Yard cleanup | Alfred van der Zwaard | https://unsplash.com/photos/a-wheelbarrow-filled-with-logs-in-a-field-pJ71xqnMKVs |
 | `img/svc-planting.webp` | Service card: Planting & beds | Quilia | https://unsplash.com/photos/person-holding-gardening-tool-near-yellow-plant--rl4m0icZo4 |
@@ -21,3 +22,7 @@ Each photo was cropped, resized and compressed to WebP for this template. A gree
 | `img/work-deck.webp` | Recent work: Deck + border planting | Zac Gudakov | https://unsplash.com/photos/white-wooden-bench-on-wooden-deck-z5_Tv41SZQg |
 | `img/work-rockpath.webp` | Recent work: Flagstone path + natives (also How it works step 4) | Craig Thomas | https://unsplash.com/photos/a-rocky-path-with-plants-and-trees-12DILvP68ak |
 | `img/work-bulbs.webp` | Recent work: Spring bulb beds | Faith Crabtree | https://unsplash.com/photos/a-garden-filled-with-lots-of-purple-and-yellow-flowers-Kmlfiddwj9M |
+| `img/work-leaves.webp` | Recent work: Fall leaf cleanup | Ellen Zhang | https://unsplash.com/photos/a-large-tree-with-lots-of-leaves-on-the-ground-YwlgKRaQXe4 |
+| `img/work-brick.webp` | Recent work: Brick path + flower beds | Annie Tray-Gavin | https://unsplash.com/photos/a-brick-path-with-a-garden-of-flowers-and-trees-aqqx2yrVB2M |
+
+The favicon (`favicon.svg`, `favicon.ico`, `favicon-32.png`, `apple-touch-icon.png`) is an original tree mark drawn for this template.

@@ -14,6 +14,9 @@
     3. Swap the palette tokens in :root below (--em, --leaf, --teal, --sky, --deep).
   ============================================================
 -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <title>Cedar &amp; Pine Landscaping · Yards done right in Eureka, Arcata &amp; Humboldt County</title>
 <meta name="description" content="Lawn care, cleanups, planting, irrigation and hardscape across Eureka, Arcata and Humboldt County. Free quotes, tidy crews, same-day replies. (Example template, fictional business.)">
 <meta name="theme-color" content="#0B1F17">
@@ -139,74 +142,68 @@ section{position:relative}
   radial-gradient(50% 50% at 20% 100%,rgba(16,185,129,.22),transparent 70%)}
 @keyframes kb{to{transform:scale(1.1) translate(-1.2%,-1%)}}
 
-/* ---------- hero stage: homeowner texting the business ---------- */
-.hstage{position:relative;width:660px;height:610px;margin:10px 0 20px}
-.hphone{position:absolute;left:196px;top:0;width:292px;height:600px;z-index:3}
-.hphone .scr{background:linear-gradient(180deg,#F6FAF8,#EDF5F1)}
-.smsh{display:flex;flex-direction:column;align-items:center;gap:4px;padding:2px 12px 10px;background:rgba(255,255,255,.75);box-shadow:0 1px 0 rgba(10,34,24,.06)}
-.smsh .gav{width:38px;height:38px}
-.smsh b{font-size:12.5px;color:var(--ink);font-weight:650;line-height:1.1}
-.smsh small{font-size:10.5px;color:#0A9A5C;font-weight:600;margin-top:-2px}
-.hphone .msgs{padding:12px 11px;gap:8px;font-size:12.8px;line-height:1.42;overflow:hidden;justify-content:flex-end}
-.hphone .bub{max-width:84%;padding:9px 12px;border-radius:17px}
-.hphone .bub.me{border-bottom-right-radius:6px}
-.hphone .bub.ai{border-bottom-left-radius:6px}
-.hphone .bub.ai b{color:var(--ink)}
-.m{display:none}
-.m.sh{display:block;animation:msgin .5s var(--spring) both}
-.hphone .msgs{transition:opacity .5s var(--ease)}
-.hphone .msgs.out{opacity:0}
-.typing{align-self:flex-start;font-size:11px;font-weight:600;color:#7F948A;padding:2px 4px}
-.typing.sh{display:block}
-@keyframes msgin{0%{opacity:0;transform:translateY(10px) scale(.96)}100%{opacity:1;transform:none}}
-.hphone .slot span{transition:background .3s,color .3s,transform .3s var(--spring)}
-.hphone .slot span.sel{transform:scale(1.06)}
-.hphone .compose{height:36px;border-radius:18px;margin:0 11px 14px}
+/* ---------- hero showcase: finished projects ---------- */
+.show{width:660px;display:flex;flex-direction:column;gap:12px;margin:10px 0 0}
+.sfeat{padding:8px;border-radius:30px}
+.frame{position:relative;height:420px;border-radius:23px;overflow:hidden;isolation:isolate;background:#0D2A1F}
+.slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.4s var(--ease);z-index:1;overflow:hidden}
+.slide.on{opacity:1;z-index:2}
+.slide .ph{position:absolute;inset:0}
+.slide .ph img{animation:kb2 18s ease-in-out infinite alternate}
+.slide:nth-child(2) .ph img{animation-delay:-5s}.slide:nth-child(3) .ph img{animation-delay:-9s}.slide:nth-child(4) .ph img{animation-delay:-13s}
+@keyframes kb2{from{transform:scale(1.02)}to{transform:scale(1.1) translate(-1.5%,-1%)}}
+.slide figcaption{position:absolute;left:16px;bottom:30px;z-index:3;display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:12px 18px 13px 14px;border-radius:16px;background:linear-gradient(160deg,rgba(10,40,29,.82),rgba(8,32,23,.7));box-shadow:inset 0 0 0 1px rgba(255,255,255,.14),0 14px 34px -14px rgba(2,14,8,.6);opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .6s var(--ease),transform .6s var(--ease),visibility 0s .6s}
+.slide.on figcaption{opacity:1;visibility:visible;transform:none;transition:opacity .6s var(--ease) .45s,transform .6s var(--ease) .45s,visibility 0s}
+.slide figcaption .tg{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#BFF5DA;margin-bottom:2px}
+.slide figcaption b{color:#fff;font-family:var(--head);font-size:22px;font-weight:650;letter-spacing:-.03em;line-height:1.15}
+.slide figcaption small{display:flex;align-items:center;gap:5px;font-size:13px;color:#C4DED1}
+.slide figcaption small .ico{width:13px;height:13px;color:var(--em2)}
+.slbl{position:absolute;left:16px;top:16px;z-index:4;display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:650;color:#fff;padding:6px 11px 6px 9px;border-radius:10px;background:rgba(8,34,24,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.16)}
+.slbl .ico{width:14px;height:14px;color:var(--em2)}
+.prog{position:absolute;left:16px;right:16px;bottom:14px;z-index:4;display:flex;gap:6px}
+.prog i{flex:1;height:3px;border-radius:2px;background:rgba(255,255,255,.24);overflow:hidden;display:block}
+.prog i::after{content:"";display:block;height:100%;background:linear-gradient(90deg,#8BF0B0,#7DD3FC);transform:scaleX(0);transform-origin:left}
+.prog i.pdone::after{transform:scaleX(1)}
+.prog i.prun::after{animation:fill var(--dur,6s) linear forwards}
+@keyframes fill{to{transform:scaleX(1)}}
+.thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.th{display:block;text-align:left;padding:6px 6px 10px;border-radius:18px;border:1px solid rgba(255,255,255,.1);background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);color:#fff;cursor:pointer;font:inherit;transition:border-color .3s,background .3s,transform .3s var(--ease)}
+.th:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.22)}
+.th .ph{display:block;height:82px;border-radius:12px}
+.th .ph img{transition:opacity .4s}
+.th:not(.on) .ph img{opacity:.72}
+.th b{display:block;font-size:13px;font-weight:650;letter-spacing:-.01em;line-height:1.25;margin:8px 4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.th small{display:block;font-size:11.5px;color:#A9C6B9;margin:1px 4px 0}
+.th.on{border-color:rgba(52,211,153,.75);background:linear-gradient(180deg,rgba(52,211,153,.18),rgba(20,184,166,.06));box-shadow:0 0 0 1px rgba(52,211,153,.35),0 16px 34px -18px rgba(16,185,129,.8)}
 
-/* project cards floating around the phone */
-.pcard{position:absolute;width:228px;padding:8px 8px 12px;border-radius:22px;z-index:2;animation:bob 7s ease-in-out infinite}
-.pcard .ph{height:148px;border-radius:15px}
-.pcard .after{position:absolute;left:16px;top:16px;z-index:3;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#fff;padding:4px 9px;border-radius:8px;background:rgba(8,34,24,.55);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.18)}
-.pcard .cap{padding:10px 6px 0}
-.pcard .cap b{display:block;color:#fff;font-size:14px;font-weight:650;line-height:1.25;letter-spacing:-.01em}
-.pcard .cap small{display:flex;align-items:center;gap:5px;font-size:12px;color:#B4CEC2;margin-top:2px}
-.pcard .cap small .ico{width:12px;height:12px;color:var(--em2)}
-.p1{left:0;top:40px;animation-delay:-1s}
-.p2{right:-34px;top:186px;width:214px;animation-delay:-3.5s}
-.p3{left:18px;bottom:20px;width:206px;animation-delay:-5s}
-.p3 .ph{height:124px}
-
-/* booked toast */
-.toast{position:absolute;right:-30px;bottom:-4px;z-index:6;display:flex;align-items:center;gap:11px;padding:11px 16px 11px 11px;border-radius:16px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);box-shadow:0 20px 50px -14px rgba(2,14,8,.6),inset 0 0 0 1px rgba(255,255,255,.9);transform:translateY(8px) scale(.94);opacity:0;transition:transform .55s var(--spring),opacity .35s}
-.toast.show{transform:none;opacity:1}
-.toast .ck{width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#10B981,#14B8A6);display:grid;place-items:center;color:#fff;flex:none}
-.toast b{display:block;font-size:13.5px;color:var(--ink);font-weight:650;line-height:1.25;white-space:nowrap}
-.toast small{font-size:11.5px;color:#71867B;white-space:nowrap}
-
-/* ---------- recent work gallery ---------- */
-.works{display:grid;grid-template-columns:1.35fr 1fr 1fr;grid-template-rows:250px 250px;gap:14px;margin-bottom:110px}
+/* ---------- recent work gallery (key section) ---------- */
+.works{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-rows:minmax(260px,auto);gap:14px}
 .work{position:relative;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -30px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.08)}
-.work.big{grid-row:1 / span 2}
+.work.big{grid-column:span 2;grid-row:span 2}
+.work.wide{grid-column:span 2}
 .work .ph{position:absolute;inset:0}
 .work .ph img{transition:transform 1.2s var(--ease)}
-.work:hover .ph img{transform:scale(1.04)}
+.work:hover .ph img{transform:scale(1.05)}
 .work .wc{position:absolute;left:14px;right:14px;bottom:14px;z-index:3;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 12px 10px 14px;border-radius:14px;background:rgba(8,32,23,.5);-webkit-backdrop-filter:blur(14px) saturate(150%);backdrop-filter:blur(14px) saturate(150%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.work.big .wc{left:20px;right:20px;bottom:20px;padding:16px 16px 16px 20px;border-radius:18px}
+.work.big .wc b{font-size:22px;font-family:var(--head);letter-spacing:-.03em}
+.work.big .wc p{font-size:14px;color:#C4DED1;margin-top:4px;max-width:380px;line-height:1.5}
 .work .wc b{display:block;color:#fff;font-size:15px;font-weight:650;line-height:1.25;letter-spacing:-.01em}
 .work .wc small{font-size:12.5px;color:#C4DED1;display:flex;align-items:center;gap:5px}
 .work .wc small .ico{width:12px;height:12px;color:var(--em2)}
-.work .wc .tg{font-size:11.5px;font-weight:650;color:#BFF5DA;padding:5px 9px;border-radius:8px;background:rgba(255,255,255,.1);white-space:nowrap}
+.work .wc .tg{font-size:11.5px;font-weight:650;color:#BFF5DA;padding:5px 9px;border-radius:8px;background:rgba(255,255,255,.1);white-space:nowrap;align-self:flex-start}
+.wcta{border-radius:22px;padding:26px 24px 24px;display:flex;flex-direction:column;justify-content:space-between;gap:18px;position:relative;overflow:hidden;background:radial-gradient(120% 90% at 0% 0%,rgba(52,211,153,.32),transparent 60%),radial-gradient(110% 90% at 100% 100%,rgba(56,189,248,.26),transparent 60%),linear-gradient(160deg,#124A36,#0B3027);box-shadow:0 30px 70px -30px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.14)}
+.wcta h3{color:#fff;font-size:26px;letter-spacing:-.04em;line-height:1.1}
+.wcta p{font-size:14.5px;color:#C4DED1;margin-top:8px;line-height:1.5}
+.wcta .btn{align-self:flex-start;height:46px;padding:0 18px;font-size:15px}
+.wstats{display:flex;flex-wrap:wrap;gap:12px 34px;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1)}
+.wstats div{display:flex;align-items:baseline;gap:10px;color:#B4CEC2;font-size:15px}
+.wstats b{font-family:var(--head);font-size:30px;font-weight:700;letter-spacing:-.04em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .rhead{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:34px;flex-wrap:wrap}
 .rhead h3{font-size:clamp(30px,3.4vw,44px);letter-spacing:-.045em}
 
-@keyframes bob{50%{transform:translateY(-6px)}}
 @keyframes pop{0%{transform:scale(.6);opacity:0}100%{transform:none;opacity:1}}
-/* phone (shared) */
-.phone{position:relative;border-radius:40px;padding:9px;background:linear-gradient(160deg,#2A3A33,#07140E 40%,#13241C);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.12),0 40px 90px -20px rgba(2,14,8,.8),0 0 0 1px rgba(0,0,0,.4)}
-.phone .scr{position:relative;border-radius:32px;overflow:hidden;background:linear-gradient(180deg,#F5F9F7,#ECF4F0);height:100%;display:flex;flex-direction:column}
-.phone .notch{position:absolute;top:8px;left:50%;transform:translateX(-50%);width:76px;height:22px;border-radius:12px;background:#07140E;z-index:3}
-.sb{display:flex;justify-content:space-between;align-items:center;padding:10px 20px 0;font-size:11px;font-weight:700;color:var(--ink);height:34px}
-.sb .sig{display:flex;gap:2px;align-items:flex-end}
-.sb .sig i{width:3px;background:var(--ink);border-radius:1px;display:block}
+/* chat bubbles (used by the chat widget) */
 .gav{width:28px;height:28px;border-radius:50%;background:radial-gradient(circle at 30% 25%,#6EE7B7,#0FA968 55%,#075E3D);display:grid;place-items:center;color:#fff;font-weight:800;font-size:12px;font-family:var(--head)}
 .gav svg{width:55%;height:55%;fill:#fff}
 .msgs{flex:1;padding:12px 10px;display:flex;flex-direction:column;gap:7px;font-size:12px;line-height:1.4}
@@ -273,37 +270,6 @@ h2.big{font-size:clamp(40px,5.4vw,76px);letter-spacing:-.05em}
 .svc .from a .ico{width:15px;height:15px;transition:transform .2s var(--ease)}
 .svc .from a:hover .ico{transform:translateX(3px)}
 .svc .gap{height:18px}
-
-/* talks back (assistant demo) */
-.talk .grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
-.feat{display:flex;flex-direction:column;gap:14px;margin-top:40px}
-.feat .f{display:flex;gap:16px;align-items:flex-start;padding:18px 20px}
-.feat .f .fi{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:none}
-.feat .f b{display:block;color:#fff;font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:2px}
-.feat .f span{font-size:15px;color:#A9C6B9}
-.tstage{position:relative;height:760px;display:flex;justify-content:center;align-items:center}
-.bphone{width:340px;height:690px}
-.bphone .site{padding:6px 16px 12px;display:flex;align-items:center;gap:10px;background:#fff;box-shadow:0 1px 0 rgba(10,34,24,.06)}
-.bphone .site .sl{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#22C27A,#0D9488);display:grid;place-items:center}
-.bphone .site .sl svg{width:18px;height:18px;fill:#fff}
-.bphone .site b{display:block;font-size:14px;color:var(--ink);line-height:1.15}
-.bphone .site small{font-size:11.5px;color:#0A9A5C;font-weight:600;display:flex;align-items:center;gap:5px}
-.bphone .site small i{width:6px;height:6px;border-radius:50%;background:#10B981;display:block}
-.bphone .msgs{font-size:13.5px;gap:9px;padding:16px 14px}
-.bphone .bub{max-width:86%;padding:10px 13px;border-radius:18px}
-.bphone .bub.me{border-bottom-right-radius:6px}
-.bphone .bub.ai{border-bottom-left-radius:6px}
-.slot{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
-.slot span{font-size:11.5px;font-weight:650;padding:5px 9px;border-radius:8px;background:rgba(16,185,129,.1);color:#0A8A55}
-.slot span.sel{background:var(--em);color:#fff}
-.appr{align-self:center;display:flex;align-items:center;gap:7px;font-size:11.5px;font-weight:650;color:#0A8A55;background:rgba(16,185,129,.12);padding:6px 11px;border-radius:999px;margin-top:2px}
-.float{position:absolute;display:flex;align-items:center;gap:12px;padding:13px 18px 13px 13px;border-radius:18px;z-index:4;background:linear-gradient(180deg,rgba(18,58,42,.88),rgba(10,38,27,.88))!important}
-.float .fi{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;color:#fff;flex:none}
-.float b{display:block;color:#fff;font-size:14.5px;font-weight:650;line-height:1.25;white-space:nowrap}
-.float small{font-size:12.5px;color:#A9C6B9;white-space:nowrap}
-.fl1{right:-70px;bottom:118px;animation:bob 6.5s ease-in-out infinite}
-.fl2{left:-40px;bottom:0;animation:bob 7.5s ease-in-out infinite;animation-delay:-3s}
-.fl3{left:-50px;top:-26px;animation:bob 8s ease-in-out infinite;animation-delay:-1.5s}
 /* how it works */
 .track{position:relative;height:6px;border-radius:6px;background:rgba(16,185,129,.12);margin:0 0 34px;overflow:hidden}
 .track i{position:absolute;inset:0;border-radius:6px;background:linear-gradient(90deg,var(--em) 0%,var(--teal) 55%,var(--sky) 100%);transform-origin:left;transform:scaleX(.06);transition:transform 1.8s var(--ease)}
@@ -325,6 +291,10 @@ h2.big{font-size:clamp(40px,5.4vw,76px);letter-spacing:-.05em}
 .ui .ql b{color:var(--ink);font-weight:650}
 .ui .qt{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-weight:700;color:var(--ink);font-size:14px}
 .ui .qt span{font-size:11px;font-weight:650;color:#0B8478;background:rgba(20,184,166,.12);padding:4px 9px;border-radius:7px}
+.ui .rq{display:flex;align-items:center;gap:8px;padding:7px 0;color:#62776C;border-bottom:1px dashed rgba(10,34,24,.1)}
+.ui .rq .ico{width:14px;height:14px;color:#0A9A5C;flex:none}
+.ui .rq b{margin-left:auto;color:var(--ink);font-weight:650;text-align:right}
+.ui .rq+.call{margin-top:12px}
 .ui .wk{display:grid;grid-template-columns:repeat(5,1fr);gap:5px}
 .ui .wk span{text-align:center;font-size:10.5px;font-weight:700;color:#8BA095;padding:6px 0 7px;border-radius:9px;background:#F1F7F3;line-height:1.3}
 .ui .wk span b{display:block;font-size:14px;color:var(--ink);font-family:var(--head)}
@@ -383,10 +353,6 @@ h2.big{font-size:clamp(40px,5.4vw,76px);letter-spacing:-.05em}
 .phold{white-space:nowrap}
 .area h2.big{font-size:clamp(40px,4.9vw,70px)}
 /* how it works: homeowner-side mini views */
-.ui .bb{display:flex;flex-direction:column;gap:7px}
-.ui .bb span{max-width:88%;padding:7px 10px;border-radius:13px;line-height:1.4;font-size:12.5px}
-.ui .bb .me{align-self:flex-end;color:#fff;background:linear-gradient(180deg,#22C27A,#0FA968);border-bottom-right-radius:4px}
-.ui .bb .ai{align-self:flex-start;color:#3A5046;background:#F1F7F3;border-bottom-left-radius:4px}
 .ui .qh{display:flex;justify-content:space-between;align-items:center;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#8BA095;margin-bottom:2px}
 .ui .acc{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:10px;height:32px;border-radius:9px;font-size:12.5px;font-weight:650;color:#fff;background:linear-gradient(180deg,#22C27A,#0FA968);box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 6px 14px -6px rgba(16,185,129,.7)}
 .ui .acc .ico{width:13px;height:13px;stroke-width:2.6}
@@ -481,17 +447,18 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
 /* ---------- responsive ---------- */
 @media (max-width:1240px){
   .hero .grid{grid-template-columns:1fr;gap:90px;max-width:760px}
-  .hstage{margin:0 auto}
+  .show{width:100%;max-width:660px;margin:0 auto}
   .steps{grid-template-columns:1fr 1fr}
   .nav .tel{display:none}
 }
 @media (max-width:1000px){
   .nav .links{display:none}
   .nav .btn{margin-left:auto}
-  .talk .grid,.final .grid,.faq .grid,.area .grid{grid-template-columns:1fr;gap:56px}
+  .final .grid,.faq .grid,.area .grid{grid-template-columns:1fr;gap:56px}
   .svcs,.revs{grid-template-columns:1fr 1fr}
-  .works{grid-template-columns:1fr 1fr;grid-template-rows:300px 220px 220px}
-  .work.big{grid-column:1 / -1;grid-row:auto}
+  .works{grid-template-columns:1fr 1fr;grid-auto-rows:minmax(220px,auto)}
+  .work.big,.wcta{grid-column:1 / -1}
+  .work.wide{grid-column:auto}
   .stats .grid{grid-template-columns:1fr}
   .shead{flex-direction:column;align-items:flex-start;gap:20px}
 }
@@ -512,19 +479,26 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
   .hero .hbg::after{background:
     linear-gradient(180deg,rgba(5,20,14,.9) 0%,rgba(6,25,18,.82) 38%,rgba(7,34,26,.62) 62%,rgba(5,20,14,.86) 100%),
     radial-gradient(70% 40% at 80% 60%,rgba(45,212,191,.18),transparent 70%)}
-  .hstage{width:100%;max-width:350px;height:auto;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .hphone{position:relative;left:auto;top:auto;grid-column:1 / -1;width:100%;max-width:310px;height:580px;margin:0 auto 6px}
-  .pcard{position:relative;left:auto;right:auto;top:auto;bottom:auto;width:auto;animation:none;padding:6px 6px 10px;border-radius:18px}
-  .pcard .ph,.p3 .ph{height:104px;border-radius:13px}
-  .pcard .after{left:12px;top:12px}
-  .pcard .cap{padding:8px 4px 0}.pcard .cap b{font-size:13px}.pcard .cap small{font-size:11.5px}
-  .p3{display:none}
-  .toast{left:0;right:0;bottom:16px;top:auto;margin:0 auto;width:max-content}
-  .works{grid-template-columns:1fr 1fr;grid-template-rows:260px 170px 170px;gap:10px;margin-bottom:80px}
-  .work.big{grid-column:1 / -1;grid-row:auto}
+  .show{gap:8px}
+  .sfeat{padding:6px;border-radius:24px}
+  .frame{height:270px;border-radius:19px}
+  .slide figcaption{left:10px;right:auto;max-width:calc(100% - 20px);bottom:24px;padding:10px 14px 11px 12px;border-radius:13px}
+  .slide figcaption b{font-size:17px}.slide figcaption small{font-size:12px}.slide figcaption .tg{font-size:10px}
+  .slbl{left:10px;top:10px;font-size:11px}
+  .prog{left:10px;right:10px;bottom:10px;gap:4px}
+  .thumbs{gap:6px}
+  .th{padding:4px;border-radius:13px}
+  .th .ph{height:50px;border-radius:9px}
+  .th b,.th small{display:none}
+  .works{grid-auto-rows:minmax(170px,auto);gap:10px}
+  .work.big{grid-row:span 2}
   .work .wc{left:8px;right:8px;bottom:8px;padding:8px 10px;border-radius:12px}
+  .work.big .wc{left:10px;right:10px;bottom:10px;padding:12px 14px}
+  .work.big .wc b{font-size:18px}.work.big .wc p{display:none}
   .work .wc b{font-size:13px}.work .wc small{font-size:11.5px}
   .work:not(.big) .wc .tg{display:none}
+  .wcta{padding:22px 20px 20px}
+  .wstats{gap:10px 24px}.wstats b{font-size:26px}
   .svc>.ph{height:160px}
   .svc .bd{padding:0 22px 22px}
   .sec{padding:96px 0}
@@ -533,18 +507,11 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
   .stat .n{font-size:66px}
   h2.big{font-size:42px}
   .svcs,.revs,.steps{grid-template-columns:1fr}
-  .bphone{width:300px}
-  .bphone .msgs{font-size:13px}
-  .fl1,.fl3{display:none}.fl2{left:50%;transform:translateX(-50%);bottom:-6px;animation:none}
-  .tstage{height:780px}
-  .bphone{height:690px}
-  .fl2{bottom:-8px}
   .chipline .ar{display:none}
   .eyebrow .pip{white-space:nowrap}
   footer{margin-top:80px}
   footer .cinfo{flex-direction:column;gap:12px}
   .phold{white-space:normal}
-  .float{padding:10px 14px 10px 10px}.float b{font-size:13px}.float small{font-size:11.5px}
   .area .grid{grid-template-columns:minmax(0,1fr)}
   .towns{gap:8px}.towns span{font-size:14px;padding:9px 13px 9px 10px}
   .routes{padding:20px 18px}
@@ -629,35 +596,28 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
       <div class="built"><span><svg class="ico"><use href="#i-check"/></svg><b>Free quotes</b></span><span><svg class="ico"><use href="#i-check"/></svg>Replies same day</span><span><svg class="ico"><use href="#i-check"/></svg>Locally owned</span></div>
     </div>
 
-    <!-- EDIT: hero visual: a homeowner texting the business + recent projects -->
-    <div class="hstage" aria-label="Example: a homeowner texts to book a free site visit">
-      <div class="pcard glass p1"><div class="ph"><img src="img/proj-arcata.webp" alt="Finished backyard with lawn, rhododendrons and benches" width="640" height="440" loading="lazy"></div><span class="after">After</span>
-        <div class="cap"><b>Backyard refresh</b><small><svg class="ico"><use href="#i-pin"/></svg>Arcata</small></div></div>
-      <div class="pcard glass p2"><div class="ph"><img src="img/proj-eureka.webp" alt="Stone path with new native planting beds" width="640" height="440" loading="lazy"></div><span class="after">After</span>
-        <div class="cap"><b>New drip + native beds</b><small><svg class="ico"><use href="#i-pin"/></svg>Eureka</small></div></div>
-      <div class="pcard glass p3"><div class="ph"><img src="img/proj-patio.webp" alt="New deck and stone wall with garden plantings" width="640" height="440" loading="lazy"></div>
-        <div class="cap"><b>Patio + plantings</b><small><svg class="ico"><use href="#i-pin"/></svg>McKinleyville</small></div></div>
-
-      <div class="phone hphone" aria-hidden="true">
-        <div class="scr">
-          <span class="notch"></span>
-          <div class="sb" style="padding-top:12px"><span>7:42</span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i></span></div>
-          <div class="smsh"><span class="gav"><svg><use href="#i-pine"/></svg></span><b data-biz="name">Cedar &amp; Pine Landscaping</b><small>Text message</small></div>
-          <div class="msgs" id="hmsgs">
-            <span class="day">Today 7:42 PM</span>
-            <div class="bub me m">Hi! Could you do a backyard cleanup in Arcata? It's pretty overgrown.</div>
-            <span class="typing m" data-t="1">Cedar &amp; Pine is typing…</span>
-            <div class="bub ai m">Happy to! Cleanups like that usually run <b>$280–$420</b> with haul-away. Free site visit for an exact price? Open this week:
-              <div class="slot"><span>Tue 10 AM</span><span id="hslot">Wed 4 PM</span><span>Fri 9 AM</span></div></div>
-            <div class="bub me m">Wed at 4 works!</div>
-            <span class="typing m" data-t="2">Cedar &amp; Pine is typing…</span>
-            <div class="bub ai m">Booked for <b>Wed 4:00 PM</b>. <span data-biz="owner">Mike</span> will walk the yard with you. We'll text a reminder the day before.</div>
-          </div>
-          <div class="compose">Text Message<span><svg class="ico" style="width:12px;height:12px"><use href="#i-send"/></svg></span></div>
+    <!-- EDIT: hero showcase: finished projects (img/show-*.webp). Each slide = one project; captions live on the slide -->
+    <div class="show" id="show" aria-label="Recent projects">
+      <div class="sfeat glass">
+        <div class="frame">
+          <figure class="slide on"><div class="ph"><img src="img/show-arcata.webp" alt="Finished backyard with lawn, rhododendrons and benches" width="1100" height="667" fetchpriority="high"></div>
+            <figcaption><span class="tg">Cleanup + planting</span><b>Backyard refresh</b><small><svg class="ico"><use href="#i-pin"/></svg>Arcata · 3 days</small></figcaption></figure>
+          <figure class="slide"><div class="ph"><img src="img/show-eureka.webp" alt="Stone path with new native planting beds" width="1100" height="667"></div>
+            <figcaption><span class="tg">Irrigation + beds</span><b>New drip + native beds</b><small><svg class="ico"><use href="#i-pin"/></svg>Eureka · 2 days</small></figcaption></figure>
+          <figure class="slide"><div class="ph"><img src="img/show-trinidad.webp" alt="Garden path between flowering rhododendrons" width="1100" height="667"></div>
+            <figcaption><span class="tg">Planting</span><b>Rhododendron walk</b><small><svg class="ico"><use href="#i-pin"/></svg>Trinidad · 4 days</small></figcaption></figure>
+          <figure class="slide"><div class="ph"><img src="img/show-patio.webp" alt="New deck and stone wall with garden plantings" width="1100" height="667"></div>
+            <figcaption><span class="tg">Hardscape</span><b>Deck + stone wall</b><small><svg class="ico"><use href="#i-pin"/></svg>McKinleyville · 1 week</small></figcaption></figure>
+          <span class="slbl"><svg class="ico"><use href="#i-leaf"/></svg>Recent project</span>
+          <div class="prog" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
         </div>
       </div>
-
-      <div class="toast" id="toast"><span class="ck"><svg class="ico" style="stroke-width:2.4"><use href="#i-cal"/></svg></span><div><b>Site visit booked · Wed 4 PM</b><small>Free, no obligation · Arcata</small></div></div>
+      <div class="thumbs" role="tablist" aria-label="Choose a project">
+        <button class="th on" role="tab" aria-selected="true"><span class="ph"><img src="img/show-arcata.webp" alt="" width="1100" height="667"></span><b>Backyard refresh</b><small>Arcata</small></button>
+        <button class="th" role="tab" aria-selected="false"><span class="ph"><img src="img/show-eureka.webp" alt="" width="1100" height="667"></span><b>Drip + native beds</b><small>Eureka</small></button>
+        <button class="th" role="tab" aria-selected="false"><span class="ph"><img src="img/show-trinidad.webp" alt="" width="1100" height="667"></span><b>Rhododendron walk</b><small>Trinidad</small></button>
+        <button class="th" role="tab" aria-selected="false"><span class="ph"><img src="img/show-patio.webp" alt="" width="1100" height="667"></span><b>Deck + stone wall</b><small>McKinleyville</small></button>
+      </div>
     </div>
   </div>
 </section>
@@ -678,10 +638,10 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
         <div class="viz months" id="months"></div>
       </div>
       <div class="stat lglass rv d2" style="--c1:#0284C7;--c2:#38BDF8;--w:rgba(56,189,248,.14)">
-        <div class="n"><span>1<small> text</small></span></div>
-        <h3>Is all it takes to book</h3>
-        <p>Tell us what you need by text. No phone tag, and no forms unless you'd rather.</p>
-        <div class="viz chipline"><span><svg class="ico" style="width:14px;height:14px;color:#0284C7"><use href="#i-relay"/></svg><span data-biz="phone">(707) 555-0100</span></span><span><i style="background:#0FA968"></i>Replies same day</span></div>
+        <div class="n"><span>9<small> towns</small></span></div>
+        <h3>All around Humboldt</h3>
+        <p>Weekly routes through Eureka, Arcata, McKinleyville and more, so getting on the schedule is easy.</p>
+        <div class="viz chipline"><span><svg class="ico" style="width:14px;height:14px;color:#0284C7"><use href="#i-pin"/></svg>Eureka</span><span><svg class="ico" style="width:14px;height:14px;color:#0A9A5C"><use href="#i-pin"/></svg>Arcata</span><span>+7 more</span></div>
       </div>
     </div>
   </div>
@@ -760,17 +720,21 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
   <div class="wrap">
     <div class="shead">
       <div class="rv"><div class="kick"><i></i>How it works</div><h2 class="big">Request to done.<br><span class="gt">No phone tag.</span></h2></div>
-      <p class="lead rv d1" style="max-width:420px">Four simple steps, and you'll get a text at each one, so you always know what's happening and when.</p>
+      <p class="lead rv d1" style="max-width:420px">Four simple steps. You always know what it costs, when we'll be there and what's next.</p>
     </div>
     <div class="track"><i></i></div>
     <div class="steps">
       <div class="step lglass rv" style="--c:#0A9A5C;--c2:#34D399;--w:rgba(16,185,129,.11)">
         <span class="num"><em>01</em>Request</span>
         <h3>Tell us about the yard</h3>
-        <p>Use the form, text us or ask the assistant. A sentence or two is plenty.</p>
+        <p>Use the quote form, call or text. A sentence or two about the yard is plenty.</p>
         <div class="ui">
-          <div class="bb"><span class="me">Backyard cleanup in Arcata, about a quarter acre. Lots of blackberry.</span><span class="ai">Thanks! You'll have a price by morning.</span></div>
-          <span class="call"><svg class="ico"><use href="#i-relay"/></svg>You texted 9:12 PM · reply in 1 min</span>
+          <div class="qh"><span>Your request</span><span>Free</span></div>
+          <div class="rq"><svg class="ico"><use href="#i-leaf"/></svg><span>Service</span><b>Yard cleanup</b></div>
+          <div class="rq"><svg class="ico"><use href="#i-pin"/></svg><span>Town</span><b>Arcata</b></div>
+          <div class="rq"><svg class="ico"><use href="#i-grass"/></svg><span>Yard</span><b>About ¼ acre</b></div>
+          <div class="rq"><svg class="ico"><use href="#i-doc"/></svg><span>Notes</span><b>Lots of blackberry</b></div>
+          <span class="call"><svg class="ico"><use href="#i-clock"/></svg>Price back by morning</span>
         </div>
       </div>
       <div class="step lglass rv d1" style="--c:#0D9488;--c2:#2DD4BF;--w:rgba(20,184,166,.11)">
@@ -789,63 +753,59 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
       <div class="step lglass rv d2" style="--c:#0284C7;--c2:#38BDF8;--w:rgba(56,189,248,.12)">
         <span class="num"><em>03</em>Scheduled</span>
         <h3>Pick a day that works</h3>
-        <p>Choose a day that suits you. We text a reminder the day before.</p>
+        <p>Choose a day that suits you. We confirm the day before, rain or shine.</p>
         <div class="ui">
           <div class="wk"><span>Mon<b>12</b></span><span class="on">Tue<b>13</b></span><span>Wed<b>14</b></span><span>Thu<b>15</b></span><span>Fri<b>16</b></span></div>
           <div class="ev"><div><b>Your cleanup · Tue 8:00 AM</b><small>No need to be home</small></div></div>
-          <div class="rm"><svg class="ico"><use href="#i-relay"/></svg>Reminder text Monday evening</div>
+          <div class="rm"><svg class="ico"><use href="#i-cal"/></svg>Confirmed Monday evening</div>
         </div>
       </div>
       <div class="step lglass rv d3" style="--c:#16A34A;--c2:#4ADE80;--w:rgba(74,222,128,.12)">
         <span class="num"><em>04</em>Done</span>
         <h3>Walk out to a clean yard</h3>
-        <p>We clean up after ourselves and text you photos of the finished job.</p>
+        <p>We clean up after ourselves, haul away the green waste and walk the yard with you.</p>
         <div class="ui">
           <div class="ph"><img src="img/work-rockpath.webp" alt="Finished garden path with fresh planting" width="880" height="660" loading="lazy"><span class="bd2"><i><svg class="ico"><use href="#i-check"/></svg></i>All done</span></div>
-          <ul class="chk" style="margin-top:0"><li><svg class="ico"><use href="#i-check"/></svg>Photos of the finished yard by text</li><li><svg class="ico"><use href="#i-check"/></svg>Green waste hauled away</li></ul>
+          <ul class="chk" style="margin-top:0"><li><svg class="ico"><use href="#i-check"/></svg>Final walk-through together</li><li><svg class="ico"><use href="#i-check"/></svg>Green waste hauled away</li></ul>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EDIT: website assistant demo -->
-<section class="talk sec dark grain panel" data-nav="dark">
+<!-- EDIT: recent work (swap in real project photos: img/work-*.webp) -->
+<section class="workx sec dark grain panel" id="work" data-nav="dark">
   <div class="fields"><i class="f2" style="left:-10%;right:auto"></i><i class="f3" style="left:50%"></i><i class="f1" style="left:55%;top:-30%"></i></div>
+  <div class="dots"></div>
   <div class="wrap">
-    <div class="grid">
-      <div class="rv">
-        <div class="kick"><i></i>Ask us anything</div>
-        <h2 class="big">Questions answered.<br><span class="gt">Visits booked.</span></h2>
-        <p class="lead" style="margin-top:26px">Our website assistant knows our prices, service area and openings. Ask it at 9 PM on a Sunday and it'll give you a straight answer and book a free site visit.</p>
-        <div class="feat">
-          <div class="f glass"><span class="fi" style="background:linear-gradient(135deg,#22C27A,#0A8A55)"><svg class="ico"><use href="#i-doc"/></svg></span><div><b>Straight answers on pricing</b><span>Real price ranges from our actual price list.</span></div></div>
-          <div class="f glass"><span class="fi" style="background:linear-gradient(135deg,#2DD4BF,#0D9488)"><svg class="ico"><use href="#i-cal"/></svg></span><div><b>Live availability</b><span>Books free site visits right into open slots.</span></div></div>
-          <div class="f glass"><span class="fi" style="background:linear-gradient(135deg,#38BDF8,#0284C7)"><svg class="ico"><use href="#i-shield"/></svg></span><div><b>A real person follows up</b><span><span data-biz="owner">Mike</span> texts you to confirm every visit.</span></div></div>
-        </div>
+    <div class="shead">
+      <div class="rv"><div class="kick"><i></i>Recent work</div><h2 class="big">Yards we've<br><span class="gt">done lately.</span></h2></div>
+      <p class="lead rv d1" style="max-width:430px">Real yards around Humboldt County, from quick fall cleanups to full backyard makeovers. Every one of them started with a free quote.</p>
+    </div>
+    <div class="works">
+      <div class="work big rv"><div class="ph"><img src="img/work-maple.webp" alt="Garden with Japanese maples, rock beds and evergreen shrubs" width="860" height="748" loading="lazy"></div>
+        <div class="wc"><div><b>Rock garden + maples</b><small><svg class="ico"><use href="#i-pin"/></svg>Trinidad · 2 weeks</small><p>Boulders, a dry creek bed and Japanese maples that glow every October. Built to drain through the rainy season.</p></div><span class="tg">Planting</span></div></div>
+      <div class="work rv d1"><div class="ph"><img src="img/work-border.webp" alt="Curving path through a perennial flower border" width="800" height="600" loading="lazy"></div>
+        <div class="wc"><div><b>Perennial border</b><small><svg class="ico"><use href="#i-pin"/></svg>Fortuna</small></div><span class="tg">Beds</span></div></div>
+      <div class="work rv d2"><div class="ph"><img src="img/work-deck.webp" alt="Backyard deck with border planting and tall evergreens" width="880" height="660" loading="lazy"></div>
+        <div class="wc"><div><b>Deck + border planting</b><small><svg class="ico"><use href="#i-pin"/></svg>McKinleyville</small></div><span class="tg">Hardscape</span></div></div>
+      <div class="work rv d1"><div class="ph"><img src="img/work-rockpath.webp" alt="Flagstone path through low native planting" width="880" height="660" loading="lazy"></div>
+        <div class="wc"><div><b>Flagstone path + natives</b><small><svg class="ico"><use href="#i-pin"/></svg>Arcata</small></div><span class="tg">Hardscape</span></div></div>
+      <div class="work rv d2"><div class="ph"><img src="img/work-bulbs.webp" alt="Spring bulbs in a freshly mulched bed" width="880" height="660" loading="lazy"></div>
+        <div class="wc"><div><b>Spring bulb beds</b><small><svg class="ico"><use href="#i-pin"/></svg>Ferndale</small></div><span class="tg">Seasonal</span></div></div>
+      <div class="work rv"><div class="ph"><img src="img/work-leaves.webp" alt="Large tree over a lawn covered in fall leaves" width="880" height="660" loading="lazy"></div>
+        <div class="wc"><div><b>Fall leaf cleanup</b><small><svg class="ico"><use href="#i-pin"/></svg>Eureka</small></div><span class="tg">Cleanup</span></div></div>
+      <div class="work wide rv d1"><div class="ph"><img src="img/work-brick.webp" alt="Curving brick path with flower beds and trees" width="1200" height="560" loading="lazy"></div>
+        <div class="wc"><div><b>Brick path + flower beds</b><small><svg class="ico"><use href="#i-pin"/></svg>Eureka</small></div><span class="tg">Hardscape</span></div></div>
+      <div class="wcta rv d2">
+        <div><h3>Your yard next?</h3><p>Tell us what you have in mind. Free quote, usually within a day.</p></div>
+        <a href="#quote" class="btn btn-p">Get a free quote <svg class="ico arr"><use href="#i-arrow"/></svg></a>
       </div>
-      <div class="tstage rv d1">
-        <div class="float glass fl3"><span class="fi" style="background:linear-gradient(135deg,#0D9488,#0284C7)"><svg class="ico"><use href="#i-doc"/></svg></span><div><b>Real price ranges</b><small>From our actual price list</small></div></div>
-        <div class="phone bphone">
-          <div class="scr">
-            <span class="notch"></span>
-            <div class="sb" style="padding-top:12px"><span>9:14</span><span class="sig"><i style="height:4px"></i><i style="height:6px"></i><i style="height:8px"></i><i style="height:10px"></i></span></div>
-            <div class="site"><span class="sl"><svg><use href="#i-pine"/></svg></span><div><b data-biz="name">Cedar &amp; Pine Landscaping</b><small><i></i>Assistant · replies in seconds</small></div></div>
-            <div class="msgs">
-              <span class="day">Sunday 9:14 PM</span>
-              <div class="bub me">Hi! Could you put drip irrigation in our front beds? We're in Eureka. What does that usually cost?</div>
-              <div class="bub ai">Yes! Most front-yard drip installs run <b style="color:var(--ink)">$650–$1,100</b>, depending on bed size and whether you want a smart timer. <span data-biz="owner">Mike</span> can give you an exact price at a free site visit. Open this week:
-                <div class="slot"><span>Wed 4 PM</span><span class="sel">Thu 10 AM</span><span>Sat 9 AM</span></div></div>
-              <div class="bub me">Thursday at 10 works!</div>
-              <div class="bub ai">You're booked for <b style="color:var(--ink)">Thu 10:00 AM</b>. We'll text a reminder the day before. Any gate code we should know?</div>
-              <span class="appr"><svg class="ico" style="width:13px;height:13px;stroke-width:2.6"><use href="#i-check"/></svg>Free site visit booked · Thu 10 AM</span>
-            </div>
-            <div class="compose" style="height:40px;border-radius:20px;margin:0 14px 16px">Ask about pricing, dates…<span style="width:30px;height:30px"><svg class="ico" style="width:13px;height:13px"><use href="#i-send"/></svg></span></div>
-          </div>
-        </div>
-        <div class="float glass fl1"><span class="fi" style="background:linear-gradient(135deg,#10B981,#14B8A6)"><svg class="ico" style="stroke-width:2.6"><use href="#i-check"/></svg></span><div><b>Site visit booked</b><small>Thu 10:00 AM · Eureka</small></div></div>
-        <div class="float glass fl2"><span class="fi" style="background:linear-gradient(135deg,#22C27A,#0284C7)"><svg class="ico"><use href="#i-clock"/></svg></span><div><b>Answered in 3 seconds</b><small>Sunday, 9:14 PM</small></div></div>
-      </div>
+    </div>
+    <div class="wstats rv">
+      <div><b>15</b>years in Humboldt</div>
+      <div><b>9</b>towns on our routes</div>
+      <div><b>1 day</b>typical quote turnaround</div>
     </div>
   </div>
 </section>
@@ -889,37 +849,19 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
   <div class="fields"><i class="f1" style="left:40%"></i><i class="f2" style="right:-20%;top:30%"></i><i class="f3" style="left:-10%;bottom:-40%"></i></div>
   <div class="dots"></div>
   <div class="wrap">
-    <!-- EDIT: recent work (swap in real project photos: img/work-*.webp) -->
-    <div class="shead" id="work">
-      <div class="rv"><div class="kick"><i></i>Recent work</div><h2 class="big">Yards we've<br><span class="gt">done lately.</span></h2></div>
-      <p class="lead rv d1" style="max-width:420px">A few recent projects around Humboldt County, from quick fall cleanups to full backyard makeovers.</p>
-    </div>
-    <div class="works">
-      <div class="work big rv"><div class="ph"><img src="img/work-maple.webp" alt="Garden with Japanese maples, rock beds and evergreen shrubs" width="880" height="660" loading="lazy"></div>
-        <div class="wc"><div><b>Rock garden + maples</b><small><svg class="ico"><use href="#i-pin"/></svg>Trinidad</small></div><span class="tg">Planting</span></div></div>
-      <div class="work rv d1"><div class="ph"><img src="img/work-border.webp" alt="Curving path through a perennial flower border" width="800" height="600" loading="lazy"></div>
-        <div class="wc"><div><b>Perennial border</b><small><svg class="ico"><use href="#i-pin"/></svg>Fortuna</small></div><span class="tg">Beds</span></div></div>
-      <div class="work rv d2"><div class="ph"><img src="img/work-deck.webp" alt="Backyard deck with border planting and tall evergreens" width="880" height="660" loading="lazy"></div>
-        <div class="wc"><div><b>Deck + border planting</b><small><svg class="ico"><use href="#i-pin"/></svg>McKinleyville</small></div><span class="tg">Hardscape</span></div></div>
-      <div class="work rv d1"><div class="ph"><img src="img/work-rockpath.webp" alt="Flagstone path through low native planting" width="880" height="660" loading="lazy"></div>
-        <div class="wc"><div><b>Flagstone path + natives</b><small><svg class="ico"><use href="#i-pin"/></svg>Arcata</small></div><span class="tg">Hardscape</span></div></div>
-      <div class="work rv d2"><div class="ph"><img src="img/work-bulbs.webp" alt="Spring bulbs in a freshly mulched bed" width="880" height="660" loading="lazy"></div>
-        <div class="wc"><div><b>Spring bulb beds</b><small><svg class="ico"><use href="#i-pin"/></svg>Ferndale</small></div><span class="tg">Seasonal</span></div></div>
-    </div>
-
-    <div class="rhead" id="reviews-list">
-      <div class="rv"><div class="kick"><i></i>Reviews</div><h3>Neighbors with <span class="gt">happy yards.</span></h3></div>
+    <div class="shead" id="reviews-list">
+      <div class="rv"><div class="kick"><i></i>Reviews</div><h2 class="big">Neighbors with<br><span class="gt">happy yards.</span></h2></div>
       <span class="phold rv d1"><svg class="ico"><use href="#i-info"/></svg>Example reviews for this template. Real ones go here.</span>
     </div>
     <div class="revs">
       <div class="rev glass rv">
         <div class="rtop"><span class="stars" aria-label="5 out of 5">★★★★★</span><span class="job">Backyard cleanup</span></div>
-        <q>They turned our overgrown back lot into a yard we actually use. Showed up Tuesday at 8, exactly like the text said.</q>
+        <q>They turned our overgrown back lot into a yard we actually use. Showed up Tuesday at 8, exactly when they said.</q>
         <div class="who"><span class="av" style="background:linear-gradient(135deg,#10B981,#0D9488)">EX</span><div><b>Example review</b><small>Arcata</small></div></div>
       </div>
       <div class="rev glass rv d1">
         <div class="rtop"><span class="stars" aria-label="5 out of 5">★★★★★</span><span class="job">Lawn care</span></div>
-        <q>I texted at night and had a quote before breakfast. The biweekly mowing has been spotless all summer.</q>
+        <q>I asked for a quote at night and had it before breakfast. The biweekly mowing has been spotless all summer.</q>
         <div class="who"><span class="av" style="background:linear-gradient(135deg,#0EA5E9,#0D9488)">EX</span><div><b>Example review</b><small>Eureka</small></div></div>
       </div>
       <div class="rev glass rv d2">
@@ -961,7 +903,7 @@ footer .bottom{display:flex;justify-content:space-between;margin-top:26px;font-s
         <div class="points">
           <span><i><svg class="ico" style="width:14px;height:14px;stroke-width:2.6"><use href="#i-check"/></svg></i>Free quotes across Humboldt County</span>
           <span><i><svg class="ico" style="width:14px;height:14px;stroke-width:2.6"><use href="#i-check"/></svg></i>Written price before any work starts</span>
-          <span><i><svg class="ico" style="width:14px;height:14px;stroke-width:2.6"><use href="#i-check"/></svg></i>Text updates from request to done</span>
+          <span><i><svg class="ico" style="width:14px;height:14px;stroke-width:2.6"><use href="#i-check"/></svg></i>A clear schedule from request to done</span>
         </div>
         <div class="contact">
           <a class="btn btn-g" href="tel:+17075550100" data-tel><svg class="ico"><use href="#i-call"/></svg>Call <span data-biz="phone">(707) 555-0100</span></a>
@@ -1036,7 +978,7 @@ var BIZ = {
   email:    "hello@cedarandpine.site", // quote form opens a mailto to this
   hours:    "Mon–Fri 7–5 · Sat 8–12",
   region:   "Humboldt County, CA",
-  owner:    "Mike"                     // first name used in chat copy
+  owner:    "Mike"                     // owner first name (optional, for copy marked data-biz="owner")
 };
 /* ===================================================================== */
 
@@ -1068,29 +1010,21 @@ var BIZ = {
     rv.forEach(function(el){io.observe(el)});
   } else rv.forEach(function(el){el.classList.add('in')});
 
-  // hero: homeowner texts the business and books a site visit (gentle ~11s loop)
-  var hm=d.getElementById('hmsgs'), toast=d.getElementById('toast'), hslot=d.getElementById('hslot');
-  var items=[].slice.call(hm.querySelectorAll('.m')), timers=[];
-  function at(ms,fn){timers.push(setTimeout(fn,ms))}
-  function show(i){items[i].classList.add('sh')}
-  function hide(i){items[i].classList.remove('sh')}
-  if(reduce){items.forEach(function(el){if(!el.hasAttribute('data-t'))el.classList.add('sh')});hslot.classList.add('sel');toast.classList.add('show')}
-  else{
-    var cycle=function(){
-      timers.forEach(clearTimeout);timers=[];
-      hm.classList.remove('out');items.forEach(function(el){el.classList.remove('sh')});hslot.classList.remove('sel');toast.classList.remove('show');
-      at(400,function(){show(0)});
-      at(1300,function(){show(1)});
-      at(2700,function(){hide(1);show(2)});
-      at(4300,function(){hslot.classList.add('sel')});
-      at(4900,function(){show(3)});
-      at(5600,function(){show(4)});
-      at(6700,function(){hide(4);show(5)});
-      at(7100,function(){toast.classList.add('show')});
-      at(10500,function(){toast.classList.remove('show');hm.classList.add('out')});
-      at(11200,cycle);
+  // hero showcase: crossfade through recent projects (thumbs jump to a project)
+  var sh=d.getElementById('show');
+  if(sh){
+    var slides=[].slice.call(sh.querySelectorAll('.slide')), ths=[].slice.call(sh.querySelectorAll('.th')),
+        bars=[].slice.call(sh.querySelectorAll('.prog i')), DUR=6500, cur=0, tmr;
+    sh.querySelector('.prog').style.setProperty('--dur',DUR+'ms');
+    var go=function(n){
+      cur=n; clearTimeout(tmr);
+      slides.forEach(function(el,i){el.classList.toggle('on',i===n)});
+      ths.forEach(function(el,i){el.classList.toggle('on',i===n);el.setAttribute('aria-selected',i===n)});
+      bars.forEach(function(el,i){el.classList.remove('prun');el.classList.toggle('pdone',i<n||(reduce&&i===n))});
+      if(!reduce){void bars[n].offsetWidth;bars[n].classList.add('prun');tmr=setTimeout(function(){go((n+1)%slides.length)},DUR)}
     };
-    cycle();
+    ths.forEach(function(el,i){el.addEventListener('click',function(){go(i)})});
+    go(0);
   }
 
   // chat bubble
